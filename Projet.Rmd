@@ -79,17 +79,17 @@ symbols(pt[, c("x", "y")], circles=pt$size, add=TRUE, bg="red", inches=FALSE)
 LegTitle <- "Nombre\ndes cas\npositifs\ncovid-19\n"
 
 
-rLeg <- quantile(pt$size, c(1, 0.9, 0.25, 0), type=1, na.rm=TRUE);rLeg
-rVal <- quantile(pt$var, c(1, 0.9, 0.25, 0), type=1, na.rm=TRUE);rVal
+rLeg <- quantile(pt$size, c(1, 0.9, 0.25, 0), type=1, na.rm=TRUE)
+rVal <- quantile(pt$var, c(1, 0.9, 0.25, 0), type=1, na.rm=TRUE)
 
 # Coordonnees du coin bas gauche de la figure
-l <- data.frame(x=x1, y=y1);head(l)
+l <- data.frame(x=x1, y=y1)
 
 # Position x initiale de la legende
-xinit <- l$x + rLeg[1];xinit
+xinit <- l$x + rLeg[1]
 
 # Position y initial de chaque cercle de la legende
-ypos <- l$y + rLeg;ypos
+ypos <- l$y + rLeg
 
 # Plotter les cercles de la legende
 symbols(x=rep(xinit, 4), y=ypos, circles=rLeg, add=TRUE, bg="red", inches=FALSE)
@@ -137,7 +137,7 @@ library(RColorBrewer)
 
 
 ```{r}
-# 
+# Construire un dataframe qui contient les id des gouvernorats et les informations associes
 i = match(fdc@data[, "id"], donnees[, "gou"])
 fdc@data <- data.frame(fdc@data, donnees[i,])
 fdc@data$var <- as.vector(fdc@data$case_n) / max(fdc@data$case_n, na.rm=TRUE)
