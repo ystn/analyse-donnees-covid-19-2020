@@ -1,0 +1,28 @@
+date,age,city,return_from,return_date,gender,situation,hospital_place,hospital_name,health
+02/03/2020,40,Gafsa,Italy,27/02/2020,M,Cured,Sousse,University Hospital Farhat Hashad,NULL
+08/03/2020,64,Mahdia,Italy,22/02/2020,M,Critical,Sousse,University Hospital Farhat Hashad,diabetic
+09/03/2020,54,Mahdia,Local,Local,F,Critical,Sousse,University Hospital Farhat Hashad,diabetic+high blood pressure
+09/03/2020,83,Bizerte,Strasbourg,28/02/2020,M,In progress,Strasbourg,NULL,NULL
+09/03/2020,35,Tunis,Italy,07/03/2020,F,In progress,Self-insulation,Self-insulation,NULL
+10/03/2020,62,Mahdia,Local,Local,M,In progress,Self-insulation,Self-insulation,NULL
+11/03/2020,40,Ariana,Egypt,01/03/2020,M,In progress,Self-insulation,Self-insulation,NULL
+12/03/2020,36,Tunis,France,08/03/2020,F,In progress,Self-insulation,Self-insulation,NULL
+12/03/2020,53,Tunis,France,11/03/2020,F,In progress,Self-insulation,Self-insulation,NULL
+12/03/2020,34,Tunis,Local,Local,F,In progress,Self-insulation,Self-insulation,NULL
+12/03/2020,28,Tunis,Local,Local,M,In progress,Self-insulation,Self-insulation,NULL
+12/03/2020,35,Ariana,Local,Local,F,In progress,Self-insulation,Self-insulation,NULL
+12/03/2020,0.3,Ariana,Local,Local,F,In progress,Self-insulation,Self-insulation,NULL
+13/03/2020,45,Bizerte,Local,Local,F,In progress,Self-insulation,Self-insulation,NULL
+13/03/2020,NULL,Ariana,Egypt,02/03/2020,M,In progress,Self-insulation,Self-insulation,NULL
+13/03/2020,NULL,Tunis,Local,Local,M,In progress,Self-insulation,Self-insulation,NULL
+14/03/2020,47,Tataouine,France,NULL,M,In progress,Self-insulation,Self-insulation,NULL
+14/03/2020,71,Ariana,Local,Local,F,In progress,Self-insulation,Self-insulation,NULL
+15/03/2020,34,Kairouan,France,11/03/2020,M,In progress,Self-insulation,Self-insulation,NULL
+15/03/2020,30,Tunis,France,NULL,F,In progress,Self-insulation,Self-insulation,NULL
+16/03/2020,NULL,Tunis,Local,Local,F,In progress,NULL,NULL,NULL
+16/03/2020,60,Tunis,England,NULL,F,In progress,NULL,NULL,NULL
+16/03/2020,40,Monastir,France,NULL,F,In progress,NULL,NULL,NULL
+16/03/2020,20,Sousse,France,NULL,M,In progress,NULL,NULL,NULL
+17/03/2020,55,Sfax,Spain,13/03/2020,M,In progress,Self-insulation,Self-insulation,NULL
+17/03/2020,NULL,Sousse,Egypt,10/03/2020,M,In progress,NULL,NULL,NULL
+17/03/2020,NULL,Kairouan,Local,Local,F,In progress,Self-insulation,Self-insulation,NULL

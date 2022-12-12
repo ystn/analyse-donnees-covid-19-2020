@@ -1,0 +1,90 @@
+case,confirmation_date,age,gender,city,symptomatic,return_from,country
+89,2020-03-22,46.0,Masculin,Mednine,2020-03-14,Local,Tunisia
+88,2020-03-22,63.0,Féminin,Mednine,2020-03-14,Local,Tunisia
+87,2020-03-22,40.0,Masculin,Tunis,2020-03-19,Local,Tunisia
+86,2020-03-22,57.0,Féminin,Ariana,2020-03-21,Local,Tunisia
+85,2020-03-22,61.0,Masculin,Manouba,2020-03-16,France,Tunisia
+84,2020-03-22,,Féminin,Tunis,2020-03-14,Local,Tunisia
+83,2020-03-22,69.0,Féminin,Tunis,2020-03-20,France,Tunisia
+82,2020-03-22,61.0,Féminin,Tunis,2020-03-16,Espagne,Tunisia
+81,2020-03-22,59.0,Féminin,Tunis,2020-03-18,France,Tunisia
+80,2020-03-22,40.0,Féminin,Tunis,2020-03-16,France,Tunisia
+79,2020-03-22,28.0,Masculin,Tunis,2020-03-16,France,Tunisia
+78,2020-03-22,60.0,Féminin,Ben Arous,2020-03-22,Local,Tunisia
+77,2020-03-22,27.0,Féminin,Ben Arous,2020-03-22,Local,Tunisia
+76,2020-03-22,61.0,Masculin,Ben Arous,2020-03-15,Local,Tunisia
+75,2020-03-21,75.0,Masculin,Kebili,-,France,Tunisia
+74,2020-03-21,57.0,Masculin,Ben Arous,-,Local,Tunisia
+73,2020-03-21,60.0,Masculin,Ariana,-,Etats Unis,Tunisia
+72,2020-03-21,54.0,Masculin,Tunis,-,France,Tunisia
+71,2020-03-21,72.0,Masculin,Sfax,-,France,Tunisia
+70,2020-03-21,63.0,Masculin,Sfax,-,Turquie,Tunisia
+69,2020-03-21,25.0,Masculin,Sfax,-,France,Tunisia
+68,2020-03-21,30.0,Féminin,Monastir,-,France,Tunisia
+67,2020-03-21,26.0,Féminin,Monastir,-,Turquie,Tunisia
+66,2020-03-21,56.0,Masculin,Ariana,-,France,Tunisia
+65,2020-03-21,36.0,Masculin,Gabes,-,France,Tunisia
+64,2020-03-21,47.0,Féminin,Tunis,-,Turquie,Tunisia
+63,2020-03-21,43.0,Masculin,Tataouine,-,France,Tunisia
+62,2020-03-21,48.0,Masculin,Tunis,-,Local,Tunisia
+61,2020-03-21,77.0,Masculin,Tunis,-,France,Tunisia
+60,2020-03-20,38.0,Masculin,Ben Arous,-,France,Tunisia
+59,2020-03-20,37.0,Féminin,Ben Arous,-,France,Tunisia
+58,2020-03-20,63.0,Masculin,Ariana,-,Local,Tunisia
+57,2020-03-20,60.0,Féminin,Sousse,-,Angleterre,Tunisia
+56,2020-03-20,80.0,Masculin,Mednine,-,France,Tunisia
+55,2020-03-20,56.0,Masculin,Mednine,-,France,Tunisia
+54,2020-03-19,77.0,Masculin,Tunis,2020-03-19,Vietnam,Tunisia
+53,2020-03-19,4.0,Féminin,Tunis,2020-03-12,Local,Tunisia
+52,2020-03-19,59.0,Féminin,Ben Arous,2020-03-12,Allemagne,Tunisia
+51,2020-03-19,22.0,Masculin,Sousse,2020-03-15,France,Tunisia
+50,2020-03-19,77.0,Masculin,Ariana,2020-03-15,France,Tunisia
+49,2020-03-19,64.0,Féminin,Monastir,2020-03-19,Local,Tunisia
+48,2020-03-19,60.0,Masculin,Monastir,2020-03-09,France,Tunisia
+47,2020-03-19,51.0,Féminin,Ariana,2020-03-17,Espagne,Tunisia
+46,2020-03-19,37.0,Féminin,Tunis,2020-03-19,Espagne,Tunisia
+45,2020-03-19,70.0,Féminin,Sousse,2020-03-18,Turquie,Tunisia
+44,2020-03-19,29.0,Masculin,Tataouine,2020-03-11,France,Tunisia
+43,2020-03-19,73.0,Féminin,Tataouine,2020-03-16,Local,Tunisia
+42,2020-03-19,16.0,Masculin,Tataouine,2020-03-15,France,Tunisia
+41,2020-03-19,50.0,Féminin,Ariana,2020-03-19,Turquie,Tunisia
+40,2020-03-19,56.0,Féminin,Ariana,2020-03-17,Espagne,Tunisia
+39,2020-03-18,40.0,Féminin,Tunis,2020-03-14,Angleterre,Tunisia
+38,2020-03-18,40.0,Masculin,Tunis,2020-03-14,Angleterre,Tunisia
+37,2020-03-18,44.0,Féminin,Tunis,2020-03-15,Local,Tunisia
+36,2020-03-18,27.0,Masculin,Mednine,2020-03-13,Italie,Tunisia
+35,2020-03-18,42.0,Masculin,Ariana,2020-03-07,Egypte,Tunisia
+34,2020-03-18,61.0,Masculin,Tunis,2020-03-05,France,Tunisia
+33,2020-03-18,22.0,Masculin,Ben Arous,2020-03-16,France,Tunisia
+32,2020-03-18,63.0,Féminin,Tunis,2020-03-16,France,Tunisia
+31,2020-03-18,18.0,Féminin,Nabeul,2020-03-16,France,Tunisia
+30,2020-03-18,40.0,Masculin,Ariana,2020-03-14,Local,Tunisia
+29,2020-03-17,44.0,Masculin,Sousse,2020-03-11,Egypte,Tunisia
+28,2020-03-17,30.0,Féminin,Ariana,2020-03-16,Local,Tunisia
+27,2020-03-17,55.0,Masculin,Sfax,2020-03-14,Espagne,Tunisia
+26,2020-03-17,27.0,Féminin,Kairouan,2020-03-17,Local,Tunisia
+25,2020-03-17,31.0,Masculin,Tunis,2020-03-16,Turquie,Tunisia
+24,2020-03-16,59.0,Féminin,Tunis,2020-03-11,Local,Tunisia
+23,2020-03-16,25.0,Masculin,Sousse,2020-03-10,France,Tunisia
+22,2020-03-16,33.0,Féminin,Monastir,2020-03-14,France,Tunisia
+21,2020-03-16,75.0,Féminin,Tunis,-,Local,Tunisia
+20,2020-03-15,34.0,Masculin,Tunis,2020-03-14,France,Tunisia
+19,2020-03-15,30.0,Féminin,Kairouan,2020-03-13,France,Tunisia
+18,2020-03-14,71.0,Féminin,Ariana,2020-03-13,Local,Tunisia
+17,2020-03-14,47.0,Masculin,Tataouine,2020-03-12,France,Tunisia
+16,2020-03-13,27.0,Masculin,Tunis,2020-03-11,Local,Tunisia
+15,2020-03-13,40.0,Masculin,Ariana,2020-03-01,Egypte,Tunisia
+14,2020-03-13,45.0,Féminin,Bizerte,2020-03-12,Local,Tunisia
+13,2020-03-12,53.0,Féminin,Tunis,2020-03-11,France,Tunisia
+12,2020-03-12,36.0,Féminin,Tunis,2020-03-10,France,Tunisia
+11,2020-03-12,28.0,Masculin,Tunis,2020-03-10,Local,Tunisia
+10,2020-03-12,34.0,Féminin,Ariana,2020-03-10,Local,Tunisia
+9,2020-03-12,35.0,Féminin,Ariana,2020-03-12,Local,Tunisia
+8,2020-03-12,1.0,Féminin,Ariana,2020-03-12,Local,Tunisia
+7,2020-03-11,40.0,Masculin,Ariana,2020-03-02,Egypte,Tunisia
+6,2020-03-10,62.0,Masculin,Mahdia,2020-03-07,Local,Tunisia
+5,2020-03-09,83.0,Masculin,Bizerte,2020-03-04,France,Tunisia
+4,2020-03-09,35.0,Féminin,Tunis,2020-03-08,Italie,Tunisia
+3,2020-03-09,54.0,Féminin,Mahdia,2020-03-04,Local,Tunisia
+2,2020-03-08,64.0,Masculin,Mahdia,2020-03-03,Italie,Tunisia
+1,2020-03-02,40.0,Masculin,Gafsa,2020-02-29,Italie,Tunisia

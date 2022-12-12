@@ -1,0 +1,163 @@
+---
+title: "Projet Etude de cas covid-19"
+output: html_notebook
+author: Yassine Saidane
+---
+
+```{r}
+# Charger les modules necessaires pour manipuler la carte
+library(maptools)
+library(sp)
+library(shapefiles)
+```
+```{r}
+# Charger la carte depuis les fichier shp, dbf, prj, shx
+fdc <- readShapePoly("./carte/Gouvernorats_TN")
+```
+```{r}
+# Charger les donnees des tests admettant des resultats positifs depuis le fichier csv
+donnees_raw <- read.csv("./donnees/Coronavirus_Tunisia_updated.csv", header=TRUE, sep=",", dec=",", encoding="latin1")
+```
+
+```{r}
+# Ajouter la colonne "case_n" qui contient le nombre total des cas positifs dans chaque gouvernorat
+donnees_raw$case_n <- 1
+donnees <- aggregate(donnees$case_n, list(donnees$city), FUN=sum)
+colnames(donnees) <- c("city", "case_n")
+
+# Ajouter la colonne "id" a notre carte en se basant sur la colonne predefini "REF_TN_COD" qui contient les identifiants des gouvernorats
+fdc@data$id <- fdc@data$REF_TN_COD
+
+# Ajouter la colonne "gou" aux donnees qui contient les differentes identifiants des gouvernorats
+m_ifelse_kebili <- ifelse(test=donnees$city=="Kebili", yes=63, no=0)
+m_ifelse_gafsa <- ifelse(test=donnees$city=="Gafsa", yes=61, no=m_ifelse_kebili)
+m_ifelse_tataouine <- ifelse(test=donnees$city=="Tataouine", yes=53, no=m_ifelse_gafsa)
+m_ifelse_mednine <- ifelse(test=donnees$city=="Mednine", yes=52, no=m_ifelse_tataouine)
+m_ifelse_gabes <- ifelse(test=donnees$city=="Gabes", yes=51, no=m_ifelse_mednine)
+m_ifelse_kairouan <- ifelse(test=donnees$city=="Kairouan", yes=41, no=m_ifelse_gabes)
+m_ifelse_sfax <- ifelse(test=donnees$city=="Sfax", yes=34, no=m_ifelse_kairouan)
+m_ifelse_mahdia <- ifelse(test=donnees$city=="Mahdia", yes=33, no=m_ifelse_sfax)
+m_ifelse_monastir <- ifelse(test=donnees$city=="Monastir", yes=32, no=m_ifelse_mahdia)
+m_ifelse_sousse <- ifelse(test=donnees$city=="Sousse", yes=31, no=m_ifelse_monastir)
+m_ifelse_bizerte <- ifelse(test=donnees$city=="Bizerte", yes=17, no=m_ifelse_sousse)
+m_ifelse_nabeul <- ifelse(test=donnees$city=="Nabeul", yes=15, no=m_ifelse_bizerte)
+m_ifelse_manubah <- ifelse(test=donnees$city=="Manouba", yes=14, no=m_ifelse_nabeul)
+m_ifelse_benarous <- ifelse(test=donnees$city=="Ben Arous", yes=13, no=m_ifelse_manubah)
+m_ifelse_ariana <- ifelse(test=donnees$city=="Ariana", yes=12, no=m_ifelse_benarous)
+donnees$gou <- ifelse(test=donnees$city=="Tunis", yes=11, no=m_ifelse_ariana)
+```
+
+```{r}
+# Construire un data frame qui contient l'id, les coordonnees (x, y), nombre des cas positifs de chaque gouvernorat
+pt <- cbind(fdc@data[, "id"], as.data.frame(coordinates(fdc)))
+colnames(pt) <- c("id", "x", "y")
+i = match(pt[, "id"], donnees[, "gou"])
+pt <- data.frame(pt, donnees[i, ])
+pt$var <- pt$case_n
+
+# Extraire les differentes coordonnees du rectangle qui contient la carte
+x1 <- bbox(fdc)[1]
+y1 <- bbox(fdc)[2]
+x2 <- bbox(fdc)[3]
+y2 <- bbox(fdc)[4]
+
+# Calcule de la taille du cercle de chaque gouvernorat
+sfdc <- (x2 - x1) * (y2 - y1)
+sc <- sum(pt$var, na.rm=TRUE)
+k <- 0.2
+pt$size <- sqrt((pt$var * k * sfdc/sc)/pi)
+```
+
+```{r}
+# Plotter la carte de la Tunisie
+plot(fdc, border="white", col="grey")
+
+# Plotter les cercles correspond a chaque gouvernorat
+symbols(pt[, c("x", "y")], circles=pt$size, add=TRUE, bg="red", inches=FALSE)
+
+# Plotter la legende de la carte
+LegTitle <- "Nombre\ndes cas\npositifs\ncovid-19\n"
+
+
+rLeg <- quantile(pt$size, c(1, 0.9, 0.25, 0), type=1, na.rm=TRUE);rLeg
+rVal <- quantile(pt$var, c(1, 0.9, 0.25, 0), type=1, na.rm=TRUE);rVal
+
+# Coordonnees du coin bas gauche de la figure
+l <- data.frame(x=x1, y=y1);head(l)
+
+# Position x initiale de la legende
+xinit <- l$x + rLeg[1];xinit
+
+# Position y initial de chaque cercle de la legende
+ypos <- l$y + rLeg;ypos
+
+# Plotter les cercles de la legende
+symbols(x=rep(xinit, 4), y=ypos, circles=rLeg, add=TRUE, bg="red", inches=FALSE)
+
+# Plotter les nombres de cas positifs correspond a chaque cercle dans la legende
+text(x=rep(xinit, 4) + rLeg[1] * 1.2, y=(l$y + (2*rLeg)), rVal, cex=0.3, srt=0, adj=0)
+
+# Plotter les segments de chaque cercle de la legende qui dirige vers le nombre des cas positifs correspondant
+for (i in 1:4) {
+  segments(xinit, (l$y + (2*rLeg[i])), xinit+rLeg[1]*1.1, (l$y+(2*rLeg[i])))
+}
+
+# Plotter le titre de la legende
+text(x=xinit - rLeg[1], y=(l$y+(2 * rLeg[1])), LegTitle, adj=c(0,0), cex=0.7)
+
+# Plotter le titre de la carte
+title(main="Cas positifs covid-19, 2020", cex.sub=0.7)
+
+# Calculer les coordonnees du legende de distance
+xscale <- x2
+yscale <- y1
+
+sizescale <- 50000
+labelscale <- "50km"
+
+# Plotter la ligne repere de la distance
+SpatialPolygonsRescale(layout.scale.bar(), offset=c(xscale, yscale), scale=sizescale, fill=c("black"), plot.grid=F)
+
+# Plotter la distance correspondante a la ligne
+text(xscale+sizescale/2, yscale, paste(labelscale, "\n\n", sep=""), cex=0.7)
+
+# Calculer les coordonnees du fleche de nord
+xarrow <- x1
+yarrow <- y2 - (y2 - y1)/10
+
+# Afficher le fleche du nord sur la figure
+SpatialPolygonsRescale(layout.north.arrow(2), offset=c(xarrow, yarrow), scale=50000, plot.grid=F)
+```
+
+```{r}
+# Charger les modules necessaires pour plotter la carte de couleur
+library(classInt)
+library(RColorBrewer)
+```
+
+
+```{r}
+# 
+i = match(fdc@data[, "id"], donnees[, "gou"])
+fdc@data <- data.frame(fdc@data, donnees[i,])
+fdc@data$var <- as.vector(fdc@data$case_n) / max(fdc@data$case_n, na.rm=TRUE)
+var <- na.omit(fdc@data$var)
+
+# Definir le nombre des differentes classes couleurs
+nbclass <- 8
+
+# Generer les n intervalles pour classer le nombre de cas positifs
+distr <- classIntervals(var, nbclass, style="quantile")$brks
+
+# Generer la palette des couleurs a utiliser
+colours <- brewer.pal(nbclass, "YlOrRd")
+
+# Retourne le couleur correspondant a chaque gouvernorat
+colMap <- colours[findInterval(fdc@data$var, distr, all.inside=TRUE)]
+```
+```{r}
+plot(fdc, col=colMap, border="black", lwd=1)
+
+legend(x="topright", legend=leglabs(round(distr, 2), over="plus de", under="moins de"), fill=colours, bty="n", pt.cex=1, cex=0.7, title="indice 0-1")
+title(main="Indicateur de propagation du Covid-19", cex.sub=0.7)
+```
