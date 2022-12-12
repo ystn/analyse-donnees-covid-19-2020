@@ -19,6 +19,7 @@ Ce projet est fait dans le but d'etudier la propagation du virus covid-19 dans l
 `install.packages("shapefiles")`  
 `install.packages("classInt")`  
 `install.packages("RColorBrewer")`  
+`install.packages("leaflet")`  
 
 <div style="display:flex;flex-direction:row;">
 <img src="./screenshots/carte-a-cercles.png"/>
